@@ -142,7 +142,7 @@ func Test_listModel_Change_Selection(t *testing.T) {
 func TestRemoveItem(t *testing.T) {
 	tests := []struct {
 		name          string
-		model         listModel
+		model         ListModel
 		mode          string
 		want          interface{}
 		preselectItem int
