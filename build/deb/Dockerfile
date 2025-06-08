@@ -27,7 +27,8 @@ RUN \
 
 
 # Export stage
-FROM scratch AS export-stage
+FROM debian:trixie-20250224 AS export-stage
 ARG VERSION
 ENV WORK_DIR="/build"
-COPY --from=deb-build-stage ${WORK_DIR}/goto_${VERSION}_amd64.deb .
+COPY --from=deb-build-stage ${WORK_DIR}/goto_${VERSION}_amd64.deb /out/
+CMD ["sleep", "infinity"]
