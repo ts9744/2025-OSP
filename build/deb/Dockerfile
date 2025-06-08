@@ -20,10 +20,6 @@ RUN \
   mkdir -p ${PACKAGE_SRC_ROOT}/usr/bin && \
   cp ./dist/gg ${PACKAGE_SRC_ROOT}/usr/bin && \
   dpkg-deb -v --build "${PACKAGE_SRC_ROOT}" "${WORK_DIR}/goto_${VERSION}_amd64.deb"
-RUN \
-  dpkg -i goto_${VERSION}_amd64.deb && \
-  echo -e "\033[0;92mDEB build complete!\033[0m" && \
-  echo -e "\033[0;92m$(gg -v)\033[0m"
 
 
 # Export stage
